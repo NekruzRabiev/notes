@@ -32,11 +32,6 @@ public class NoteController {
 		return "list-notes";
 	}
 	
-	@GetMapping("/all")
-	public String all() {
-		return "list-notes";
-	}
-	
 	@GetMapping("/showFormForAdd")
 	public String showFormForAdd(Model theModel) {
 		Note note = new Note();
