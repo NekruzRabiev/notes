@@ -27,7 +27,7 @@
 		<form th:action="@{/notes/search}" class="form-inline">
 			<a th:href="@{/notes/showFormForAdd}"
 				class="btn btn-primary btn-sm mr-5 mb-3"> Add Note </a> 
-				<input 	class="form-control  ml-5 mr-sm-2 mb-3" type="search" name="keyword" required
+			<input 	class="form-control  ml-5 mr-sm-2 mb-3" type="search" name="keyword" required
 				placeholder="Search by title or content" />
 
 			<button class="btn btn-success mb-3" type="submit">Search</button>
@@ -35,23 +35,14 @@
 
 
 		<table class="table table-bordered table-striped">
-			<!-- head class="thead-dark">
-				<tr>
-					<th>Title</th>
-					<th>Content</th>
-					<th>Action</th>
-				</tr>
-			</thead-->
-
 			<tbody>
 				<tr th:each="tempNote : ${notes}">
 
 					<td th:text="${tempNote.title != ''} ? ${tempNote.title} : ${tempNote.content}"/>
-					<!-- td th:text="${tempNote.content}" /-->
 					<td>
-						<!-- Add "update" button/link --> <a
-						th:href="@{/notes/showFormForUpdate(noteId=${tempNote.id})}"
-						class="btn btn-info btn-sm"> Update </a> 
+						<!-- Add "update" button/link --> 
+						<a th:href="@{/notes/showFormForUpdate(noteId=${tempNote.id})}"
+							class="btn btn-info btn-sm"> Update </a> 
 						
 						<!-- Add "delete" button/link -->
 						<a th:href="@{/notes/delete(noteId=${tempNote.id})}"
