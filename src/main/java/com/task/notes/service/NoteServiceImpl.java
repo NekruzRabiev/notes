@@ -57,7 +57,7 @@ public class NoteServiceImpl implements NoteService {
 		if (result.isPresent()) {
 			note = result.get();
 		} else {
-			throw new RuntimeException("Did not find employee id - " + id);
+			throw new RuntimeException("Did not find note id - " + id);
 		}
 
 		return note;
